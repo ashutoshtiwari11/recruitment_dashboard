@@ -1,0 +1,16 @@
+{% load static %}
+
+{% block body %}
+    <div class="profile-container">
+        <h1>{{ user.fname }} {{ user.lname }}</h1>
+        <p><strong>Date of Birth:</strong> {{ user.dob }}</p>
+        <p><strong>Email:</strong> {{ user.email }}</p>
+        <p><strong>Address:</strong> {{ user.address }}, {{ user.city }}, {{ user.state }}, {{ user.country }}</p>
+        <p><strong>Resume:</strong> <a href="{% static 'user_resumes/' %}{{ user.resume }}" target="_blank">Download Resume</a></p>
+
+        <!-- Displaying the user's image in the corner -->
+        <div class="profile-image">
+            <img src="{% static 'user_images/' %}{{ user.img }}" alt="{{ user.fname }}'s Image">
+        </div>
+    </div>
+{% endblock %}

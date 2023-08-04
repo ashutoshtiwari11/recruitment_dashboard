@@ -1,0 +1,54 @@
+{% extends 'basic.html' %}
+{% block style %}
+{% load static %}
+<style>
+    body {
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        background-color: #f8f8f8;
+        margin: 0;
+        padding: 0;
+        background-image: url({% static 'img\_72417637-782c-435c-ad50-8a0798d46a4f.jpeg' %});
+
+    }
+    .content{
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+    }
+</style>
+{% endblock %}
+{% block body %}
+<div class="container bg-light mt-5 my-5">
+    <h1 class="mb-4">Application Tracker</h1>
+    <form method="GET" action="{% url 'tracker' %}" class="form-inline">
+        <div class="form-group">
+            <label for="select_track" class="mr-3">Select Prefrence:</label>
+            <select name="select_track" id="select_track" class="form-control mr-3">
+                <option value="job">Posted Job</option>
+                <option value="applicant">or Applicant</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="id" class="mr-3">ID:</label>
+            <input type="text" name="id" id="id" class="form-control mr-3">
+        </div>
+        <button type="submit" class="btn btn-primary">Track</button>
+    </form>
+    <br>
+    {% if track_result %}
+    <h2>Tracking Result:</h2>
+    <p>{{ track_result }}</p>
+    {% endif %}
+         <div class="container bg-info">
+            {% load static %}
+             {%  for item in send_list %}
+             <div class="container bg-light my-2">
+                <h3>{{item.fname}} {{item.job}}</h3>
+                <h5>{{item.email}} {{item.company}}</h5>
+                <h6>{{item.salary}} {{item.dob}}</h6>
+                <p>View candidate Profile </p>
+               </div>
+             {% endfor %}
+         </div>
+
+    {% endblock %}

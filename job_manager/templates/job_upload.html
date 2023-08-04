@@ -1,0 +1,84 @@
+{% extends 'basic.html' %}
+{% block style %}
+    <style>
+       body {
+      background-color: #f7f7f7;
+    }
+    .container {
+      max-width: 600px;
+      margin: auto;
+      padding-top: 50px;
+    }
+    .form-group label {
+      font-weight: bold;
+    }
+    .form-group input[type="text"],
+    .form-group input[type="number"],
+    .form-group textarea {
+      border: 1px solid #ced4da;
+      border-radius: 5px;
+      padding: 8px;
+    }
+    .form-group textarea {
+      resize: vertical;
+      min-height: 150px;
+    }
+    .btn-primary {
+      background-color: #007bff;
+      border-color: #007bff;
+      font-weight: bold;
+    }
+    .btn-primary:hover {
+      background-color: #0056b3;
+      border-color: #0056b3;
+    }
+        </style>
+{% endblock %}
+{% block body %}
+<div class="container">
+    <h2 class="text-center mb-4">Extraordinary Job Form</h2>
+    <form action="" method="post">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="job">Job Title</label>
+        <input type="text" class="form-control" id="job" name="job" required>
+      </div>
+      <div class="form-group">
+        <label for="">Job Category</label>
+        <select class="btn btn-subtle" name="cat">
+          <option value="DataScience">Search Jobs</option>
+          <option value="Python_dev">Python Developer</option>
+          <option value="AI&ML">Machine Learning & AI</option>
+          <option value="Cyber">Cyber Security</option>
+          <option value="Web_Development">Web Development</option>
+          <option value="Internship">Internships</option>
+      </select>
+        </div>
+      <div class="form-group">
+        <label for="desc">Description</label>
+        <textarea class="form-control" id="desc" name="desc" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="salary">Salary</label>
+        <input type="number" class="form-control" id="salary" name="salary" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="location">location</label>
+        <select name="location" id="location">
+          <option value="online">Online</option>
+          <option value="remote">Remote</option>
+          <option value="hybrid">Hybrid</option>
+        </select>      </div>
+      <div class="form-group">
+        <label for="pub_date">Publication Date</label>
+        <input type="date" class="form-control" id="pub_date" name="pub_date" required>
+      </div>
+      <div class="form-group">
+        <label for="expe">Experience Required (in years)</label>
+        <input type="number" class="form-control" id="expe" name="expe" required>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">Submit</button>
+    </form>
+  </div>
+{% endblock %}
