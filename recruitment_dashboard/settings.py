@@ -75,7 +75,7 @@ WSGI_APPLICATION = 'recruitment_dashboard.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'django_testing',
+        'NAME': 'ashutoshtiwari$django_testin',
         'USER': 'ashutoshtiwari',
         'PASSWORD': '@Bhavani123',
         'HOST': 'ashutoshtiwari.mysql.pythonanywhere-services.com',  # Leave empty for localhost
