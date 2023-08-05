@@ -23,10 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-xkjcgi8#585em(yxccg7asr(1qmpna6_*g14td37gxij-&_4jc'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['ashutoshtiwari.pythonanywhere.com']
 
 # Application definition
 
@@ -77,10 +76,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'django_testing',
-        'USER': 'root',
+        'USER': 'ashutoshtiwari',
         'PASSWORD': '@Bhavani123',
-        'HOST': '127.0.0.1',  # Leave empty for localhost
-        'PORT': '3306',  # Leave empty for default port
+        'HOST': 'ashutoshtiwari.mysql.pythonanywhere-services.com',  # Leave empty for localhost
+        'PORT': '',  # Leave empty for default port
     }
 }
 
